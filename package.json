@@ -1,7 +1,7 @@
 {
-  "name": "personal-portfolio",
+  "name": "earningCall_llm",
   "version": "0.1.0",
-  "homepage": "https://PatrickRealReal.github.io/earningCall",
+  "homepage": "https://PatrickRealReal.github.io/earningCall_llm",
   "private": true,
   "dependencies": {
     "@ant-design/charts": "^1.4.2",
