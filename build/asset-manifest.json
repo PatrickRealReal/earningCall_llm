@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/earningCall_llm/static/css/main.f6526b69.css",
-    "main.js": "/earningCall_llm/static/js/main.d7696ebb.js",
+    "main.css": "/earningCall_llm/static/css/main.df5af976.css",
+    "main.js": "/earningCall_llm/static/js/main.6da30729.js",
     "static/js/787.d66e0031.chunk.js": "/earningCall_llm/static/js/787.d66e0031.chunk.js",
     "static/media/zhuoer_xu.jpg": "/earningCall_llm/static/media/zhuoer_xu.f5eabdd7692be4dfb823.jpg",
     "static/media/color-sharp.png": "/earningCall_llm/static/media/color-sharp.bea361cfef80fefc2d1e.png",
@@ -30,12 +30,12 @@
     "static/media/arrow2.svg": "/earningCall_llm/static/media/arrow2.3d9522b6fd8f2464b7200ebf2c1bb09a.svg",
     "static/media/arrow1.svg": "/earningCall_llm/static/media/arrow1.0c89b5b635adf255c2822c630aaa6ccf.svg",
     "static/media/nav-icon2.svg": "/earningCall_llm/static/media/nav-icon2.178f497aa17b70c42df2a1a8c926ed01.svg",
-    "main.f6526b69.css.map": "/earningCall_llm/static/css/main.f6526b69.css.map",
-    "main.d7696ebb.js.map": "/earningCall_llm/static/js/main.d7696ebb.js.map",
+    "main.df5af976.css.map": "/earningCall_llm/static/css/main.df5af976.css.map",
+    "main.6da30729.js.map": "/earningCall_llm/static/js/main.6da30729.js.map",
     "787.d66e0031.chunk.js.map": "/earningCall_llm/static/js/787.d66e0031.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6526b69.css",
-    "static/js/main.d7696ebb.js"
+    "static/css/main.df5af976.css",
+    "static/js/main.6da30729.js"
   ]
 }
