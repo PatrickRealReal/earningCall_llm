@@ -483,6 +483,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 1000px; /* Example value */
   height: auto;
 }
+.charts-row {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 20px; /* 或者根据需要调整 */
+}
+
+.project-image-col {
+  flex: 0 0 auto;
+  margin-right: 20px; /* 或者根据需要调整 */
+}
 
 /************ Projects Css ************/
 .contact {
@@ -633,4 +643,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #e8dfdf;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+.flex{
+  display: flex;
+}
+.card-box{
+  background: #1a1d20;
+  padding: 20px;
+  border-radius: 20px;
+  height: 180px;
 }
