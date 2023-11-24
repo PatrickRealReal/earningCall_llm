@@ -56,8 +56,8 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to our project</span>
-                <h1>{`Hi! This is our Paper project: Corporate Event Prediction Using Earning Call Transcripts. Author:`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Zhaomin Xiao", "Zhelu Mai", "Zhuoer Xu" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>This paper addresses the task of predicting the occurrence of corporate events based on earning call transcripts. We introduce a novel dataset of earning call transcripts specifically curated for corporate event prediction. Through a comprehensive analysis, we explore what kind of information is presented in the transcripts that can be utilized for event prediction. Our experimental results with various machine learning models demonstrate the feasibility of automating this challenging task.</p>
+                <h1>{`Corporate Event Prediction Using Earning Call Transcripts. Author:`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Zhaomin Xiao", "Zhelu Mai", "Zhuoer Xu" ]'><span className="wrap">{text}</span></span></h1>
+                  <p>This paper offers a thorough assessment of large language models (LLMs) in the context of corporate event prediction. To achieve this, we formally establish the task of corporate event prediction, construct a novel dataset containing summaries of earning call transcripts, and conduct comprehen- sive experiments involving both raw and fine-tuned variants of the primary LLMs. Our experimental findings underscore the viability of automating this intricate task using LLMs and highlight the unnecessariness of additional finetuning.</p>
               </div>}
             </TrackVisibility>
           </Col>

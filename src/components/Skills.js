@@ -124,12 +124,12 @@ export const Skills = () => {
         }
     };
     const distributionData = [
-        {action: 'Acquisition', type: 'Yes', value: 22},
-        {action: 'Acquisition', type: 'No', value: 78},
-        {action: 'SEO', type: 'Yes', value: 15},
-        {action: 'SEO', type: 'No', value: 85},
-        {action: 'CBI', type: 'Yes', value: 28},
-        {action: 'CBI', type: 'No', value: 72}
+        {action: 'Acquisition', type: 'Yes', value: 23.79},
+        {action: 'Acquisition', type: 'No', value: 76.21},
+        {action: 'SEO', type: 'Yes', value: 16.2},
+        {action: 'SEO', type: 'No', value: 83.8},
+        {action: 'CBI', type: 'Yes', value: 30.6},
+        {action: 'CBI', type: 'No', value: 69.4}
     ];
 
     const distributionConfig = {
@@ -153,7 +153,7 @@ export const Skills = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
-                            <h2>Label Distribution</h2>
+                            <h2>Dataset</h2>
                             <p>Dataset statistics (left) and label distribution for each event (right).</p>
                             <Row>
                                 <Col span={12}>

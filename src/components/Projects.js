@@ -1,7 +1,8 @@
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row, Form, Card } from "react-bootstrap";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import ml_model from "../assets/img/performance_ml_model.png";
-import {Column} from "@ant-design/charts";
+import { Column } from "@ant-design/charts";
+import { useState } from "react";
 
 // todo：加一个滚轮，使得可以看到好几个图表
 // 解决好另外的文字展示问题
@@ -274,81 +275,101 @@ const DemoBox3 = () => {
     return <Column {...config}/>
 }
 
+const TranscriptCard = ({ isCorrect }) => {
+    const cardTitle = "Read the summary of the an earning call transcript and answer the question.";
+    const cardBody = (
+        <>
+            <p><strong>QUESTION:</strong> Will Nike acquire other companies within the next three months after the earning call?</p>
+            <p><strong>OPTIONS:</strong></p>
+            <ol>
+                <li>Yes.</li>
+                <li>No.</li>
+            </ol>
+            <p><strong>ANSWER:</strong></p>
+            <p>transcript transcript transcript transcript transcript transcript transcript transcript transcript</p>
+        </>
+    );
+
+    const footerIcon = isCorrect ? (
+        <span className="text-success">&#10003; Correct</span> // This can be replaced with an icon or image
+    ) : (
+        <span className="text-danger">&#10007; Incorrect</span> // This can be replaced with an icon or image
+    );
+
+    return (
+        <Card style={{ backgroundColor: '#000', color: '#fff', border: '1px solid #fff' }}> {/* Added border style here */}
+            <Card.Header style={{ backgroundColor: '#000', color: '#fff' }}>{cardTitle}</Card.Header>
+            <Card.Body style={{ border: '1px solid #fff' }}>{cardBody}</Card.Body>
+            <Card.Footer className="text-muted" style={{ backgroundColor: '#000', color: '#fff', borderTop: '1px solid #fff' }}>
+                {footerIcon}
+            </Card.Footer>
+        </Card>
+    );
+};
+
 export const Projects = () => {
 
-    const CardBoxs = () => {
-        return (
-            <Row>
-                <Col size={12}>
-                    <div className={'card-box'}>
-                        Read the summary of the an
-                        earning call transcript and answer
-                        the question.
-                        {'<'} SUMMARY OF TRANSCRIPT>
-                        QUESTION: Will Nike acquire
-                        other companies within the next
-                        three months after the earning call?
-                        OPTIONS:
-                        1. Yes.
-                        2. No.
-                        ANSWER:
-                        transcript transcript transcript
-                        transcript transcript transcript
-                        transcript transcript transcript
-                        transcript transcript transcript
-                    </div>
-                </Col>
-                <Col size={12}>
-                    <div className={'card-box'}>
-                        Read the summary of the an
-                        earning call transcript and answer
-                        the question.
-                        {'<'}SUMMARY OF TRANSCRIPT>
-                        QUESTION: Will Nike acquire
-                        other companies within the next
-                        three months after the earning call?
-                        OPTIONS:
-                        1. Yes.
-                        2. No.
-                        ANSWER:
-                        1. Yes.
-                    </div>
-                </Col>
-            </Row>
-        )
+    const [selectedValue, setSelectedValue] = useState('Acquisition');
+
+    const handleChange = (e) => {
+        setSelectedValue(e.target.value);
     }
+
+    const renderSelectedBox = () => {
+        switch (selectedValue) {
+            case 'Acquisition':
+                return <DemoBox1 />;
+            case 'SEO':
+                return <DemoBox2 />;
+            case 'CBI':
+                return <DemoBox3 />;
+            default:
+                return null;
+        }
+    };
+
 
     const projects = [{
         imgUrl: ml_model,
     }];
 
-    return (<section className="project" id="projects">
-        <Container>
-        <Row>
-    <Col size={12}>
-        <h2>Experiment</h2>
-        <p>Performance of different machine learning models, where the results are av- eraged over 5-fold cross-validation.</p>
-
-        {/* 横向滚动的行 */}
-        <Row className="charts-row">
-            <Col span={8} className="project-image-col">
-                <DemoBox1/>
-                <h5 style={{marginTop: '20px', textAlign: 'center'}}>Acquisition</h5>
-            </Col>
-            <Col span={8} className="project-image-col">
-                <DemoBox2/>
-                <h5 style={{marginTop: '20px', textAlign: 'center'}}>Seasoned Equity Offering</h5>
-            </Col>
-            <Col span={8} className="project-image-col">
-                <DemoBox3/>
-                <h5 style={{marginTop: '20px', textAlign: 'center'}}>Corporate Bond Issuance</h5>
-            </Col>
-        </Row>
-    </Col>
-</Row>
-
-            <CardBoxs/>
-        </Container>
-        <img className="background-image-right" src={colorSharp2}></img>
-    </section>)
+    return (
+        <section className="project" id="projects">
+            <Container>
+                <Row>
+                    <Col size={12}>
+                        <h2>Experiment</h2>
+                        <p>Performance(F1-score) of different machine learning models.</p>
+                        <Form.Select value={selectedValue} onChange={handleChange} style={{ width: '250px', margin: '0px 0 20px' }} aria-label="Model select">
+                            <option value="Acquisition">Acquisition</option>
+                            <option value="SEO">Seasoned Equity Offering</option>
+                            <option value="CBI">Corporate Bond Issuance</option>
+                        </Form.Select>
+                        <Row className="charts-row">
+                            <Col span={8} className="project-image-col">
+                                {renderSelectedBox()}
+                            </Col>
+                        </Row>
+                        {/* Add some space after the chart */}
+                        <div style={{ margin: '20px 0' }}></div>
+                        {/* Subtitle Row */}
+                        <Row>
+                            <Col size={12}>
+                                <h4 className="text-center" style={{ marginBottom: '20px' }}>Outputs of raw UL2 and FLAN-UL2.</h4>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+                <Row>
+                <Col size={12}>
+                    <TranscriptCard isCorrect={false} />
+                </Col>
+                <Col size={12}>
+                    <TranscriptCard isCorrect={true} />
+                </Col>
+            </Row>
+            </Container>
+            <img className="background-image-right" src={colorSharp2}></img>
+        </section>
+    )
 }
